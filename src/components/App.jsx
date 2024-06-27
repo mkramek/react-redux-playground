@@ -1,8 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Main from "../pages/Main";
+
 function App() {
   return (
-    <>
-      <h1>React Homework Template (Vite)</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
