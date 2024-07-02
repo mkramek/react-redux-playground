@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const tasksSlice = createSlice({
+  name: "tasks",
   initialState: [],
   reducers: {
     addTask(state, action) {
-      return {
-        ...state,
-        tasks: [...state.tasks, action.payload],
-      };
+      return [...state, action.payload];
     },
     deleteTask(state, action) {
       return state.filter((task) => task.id !== action.payload);
@@ -21,7 +19,6 @@ const tasksSlice = createSlice({
       });
     },
   },
-  name: "tasks",
 });
 
 export const reducer = tasksSlice.reducer;
